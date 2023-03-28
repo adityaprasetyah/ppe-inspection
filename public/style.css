@@ -57,8 +57,8 @@ nav {
   padding: 2rem 8rem;
   background-color: slateblue;
 }
-h1 {
-  font-size: 1em;
-  font-weight: 600;
-  color: white;
+
+.card-image {
+	height: 12rem;
+	object-fit: contain;
 }

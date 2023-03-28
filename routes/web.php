@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\InspecController;
+use App\Http\Controllers\RecapController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +17,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 });
+
+Route::group(['middleware' => 'guest'], function () {
+    // Route::get('/register', [AuthController::class, 'registerView'])->name('registerView');
+    // Route::post('/register', [AuthController::class, 'register'])->name('register');
+    Route::get('/login', [AuthController::class, 'loginView'])->name('loginView');
+    Route::post('/login', [AuthController::class, 'login'])->name('login');
+});
+
+Route::get('/recapitulation', [RecapController::class, 'index'])->name('recapitulation');
+Route::get('/recapitulation/add', [RecapController::class, 'create'])->name('recapitulation.create');
+Route::get('/recapitulation/{area}', [RecapController::class, 'list'])->name('recapitulation.list');
+
+Route::get('/inspection', [InspecController::class, 'index'])->name('inspection');
+Route::get('/inspection/add', [InspecController::class, 'create'])->name('inspection.create');
+Route::get('/inspection/{area}', [InspecController::class, 'list'])->name('inspection.list');

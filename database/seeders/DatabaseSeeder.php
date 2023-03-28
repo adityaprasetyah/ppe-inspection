@@ -12,11 +12,18 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
+        \App\Models\User::factory()->create([
+            'name' => 'Administrator',
+            'email' => 'admin@ksu.com',
+            'email_verified_at' => now(),
+            'password' => bcrypt('password'),
+            'remember_token' => 'remember_token',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        $this->call([
+            AreaSeeder::class,
+        ]);
     }
 }
