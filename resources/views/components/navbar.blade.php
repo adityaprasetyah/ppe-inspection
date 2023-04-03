@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary py-4">
   <div class="container">
-    <a class="navbar-brand text-white" href="/">PT Karya Setiakawan Utama</a>
+    <a class="navbar-brand fw-bold text-white" href="/">KSU e-Inspeksi</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -9,7 +9,7 @@
         @auth
         <li class="nav-item">
           <div class="btn-group">
-            <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            <button type="button" class="btn text-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
               {{ Auth::user()->name }}
             </button>
             <ul class="dropdown-menu">

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Area;
+use App\Models\Recap;
 use Illuminate\Http\Request;
 
 class RecapController extends Controller
@@ -15,18 +16,41 @@ class RecapController extends Controller
 
     public function list(Area $area)
     {
-        return view('recapitulation.list', compact('area'));
-    }
-
-    public function show($area)
-    {
-        return view('recapitulation.show', [
+        $recaps = Recap::where('area_id', $area->slug)->get();
+        return view('recapitulation.list', [
+            'recaps' => $recaps,
             'area' => $area,
         ]);
     }
 
-    public function create()
+    public function show($id)
     {
-        return view('recapitulation.add');
+        $recap = Recap::find($id);
+        $area = Area::where('slug', $recap->area_id)->first();
+        return view('recapitulation.show', [
+            'recap' => $recap,
+            'area' => $area,
+        ]);
+    }
+
+    public function create(Area $area)
+    {
+        return view('recapitulation.add', compact('area'));
+    }
+
+    public function store(Request $request)
+    {
+        $newRecap = $request->all();
+
+        if ($request->hasFile('image')) {
+            // dd('gambar terbaca');
+            $imageName = time().'.'.$request->image->extension();
+            $request->image->storeAs('public/images/recapitulations', $imageName);
+            $newRecap["image"] = $imageName;
+        }
+
+        Recap::create($newRecap);
+        $route = '/recapitulation/' . $request->area_id;
+        return redirect($route)->with('success', 'Data berhasil ditambahkan!');
     }
 }

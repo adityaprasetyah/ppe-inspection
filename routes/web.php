@@ -31,8 +31,10 @@ Route::group(['middleware' => 'guest'], function () {
 });
 
 Route::get('/recapitulation', [RecapController::class, 'index'])->name('recapitulation');
-Route::get('/recapitulation/add', [RecapController::class, 'create'])->name('recapitulation.create');
+Route::get('/recapitulation/{id}/detail', [RecapController::class, 'show'])->name('recapitulation.detail');
+Route::post('/recapitulation/store', [RecapController::class, 'store'])->name('recapitulation.store');
 Route::get('/recapitulation/{area}', [RecapController::class, 'list'])->name('recapitulation.list');
+Route::get('/recapitulation/{area}/add', [RecapController::class, 'create'])->name('recapitulation.create');
 
 Route::get('/inspection', [InspecController::class, 'index'])->name('inspection');
 Route::get('/inspection/add', [InspecController::class, 'create'])->name('inspection.create');

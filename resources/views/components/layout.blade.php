@@ -10,14 +10,15 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
 
     <link rel="stylesheet" href={{ asset('style.css') }}>
-    <link rel="icon" href={{ asset('favicon.ico') }}>
+    <link rel="icon" href={{ asset('ksu.png') }}>
 
-    <title>{{ $title ?? 'PPE Inspection' }}</title>
+    <title>{{ $title ?? 'Aplikasi Inspeksi APD - Karya Setiakawan Utama' }}</title>
 </head>
 
 <body>
   <x-navbar />
-  {{-- <x-shared.toast /> --}}
+  
+  <x-toast />
 
   {{ $slot }}
 </body>

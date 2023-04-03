@@ -18,4 +18,9 @@ class Area extends Model
     {
         return 'slug';
     }
+
+    public function recaps()
+    {
+        return $this->hasMany(Recap::class);
+    }
 }

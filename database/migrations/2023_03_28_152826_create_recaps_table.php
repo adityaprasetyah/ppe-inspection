@@ -13,6 +13,14 @@ return new class extends Migration
     {
         Schema::create('recaps', function (Blueprint $table) {
             $table->id();
+            $table->string('area_id');
+            $table->string('string_id');
+            $table->string('borrower_name');
+            $table->string('ppe_name');
+            $table->date('loan_date');
+            $table->date('submission_date');
+            $table->string('image')->nullable();
+            $table->text('notes')->nullable();
             $table->timestamps();
         });
     }
