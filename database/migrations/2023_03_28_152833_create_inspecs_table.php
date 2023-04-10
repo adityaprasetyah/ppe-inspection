@@ -14,6 +14,10 @@ return new class extends Migration
         Schema::create('inspecs', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('area_id');
+            $table->string('string_id');
+            $table->string('borrower_name');
+            $table->string('ppe_name');
         });
     }
 

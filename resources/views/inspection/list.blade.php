@@ -1,37 +1,38 @@
 <x-layout>
   <div class="container my-5">
-    <div class="d-flex justify-content-between mb-4">
-      <h1 class="fw-bold fs-3">Inspeksi: Area {{ $area->name }}</h1>
-      <a type="button" href={{ route('inspection.create') }} class="btn btn-primary">Tambah Inspeksi</a>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h1 class="fs-5"><a href={{ route('inspection') }}>Inspeksi</a> \   Area {{ $area->name }}</h1>
+      <a type="button" href={{ route('inspection.select.type', $area->slug) }} class="btn btn-primary">Tambah Inspeksi</a>
     </div>
+    @if (count($inspecs) == 0)
+    <div class="alert alert-warning my-5" role="alert">
+      Belum ada inspeksi untuk area {{ $area->name }}.
+    </div>
+    @else
     <table class="table table-striped">
       <thead>
         <tr>
-          <th scope="col">#</th>
-          <th scope="col">First</th>
-          <th scope="col">Last</th>
-          <th scope="col">Handle</th>
+          <th scope="col" class="fw-bold text-center">id</th>
+          <th scope="col" class="fw-bold">Nama APD</th>
+          <th scope="col" class="fw-bold">Nama Peminjam</th>
+          <th scope="col" class="fw-bold text-center">Aksi</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
+        @foreach ($inspecs as $inspec)
+        <tr class="py-2">
+          <td class="text-center">{{ $inspec->string_id }}</td>
+          <td>{{ $inspec->ppe_name }}</td>
+          <td>{{ $inspec->borrower_name }}</td>
+          <td class="text-center">
+            <a href={{ route('inspection.detail', $inspec->id) }}>
+              <button class="btn btn-light border">Lihat</button>
+            </a>
+          </td>
         </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td colspan="2">Larry the Bird</td>
-          <td>@twitter</td>
-        </tr>
+        @endforeach
       </tbody>
     </table>
+    @endif
   </div>
 </x-layout>

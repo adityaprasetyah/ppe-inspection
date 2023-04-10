@@ -37,5 +37,7 @@ Route::get('/recapitulation/{area}', [RecapController::class, 'list'])->name('re
 Route::get('/recapitulation/{area}/add', [RecapController::class, 'create'])->name('recapitulation.create');
 
 Route::get('/inspection', [InspecController::class, 'index'])->name('inspection');
-Route::get('/inspection/add', [InspecController::class, 'create'])->name('inspection.create');
+Route::get('/inspection/{id}/detail', [InspecController::class, 'show'])->name('inspection.detail');
 Route::get('/inspection/{area}', [InspecController::class, 'list'])->name('inspection.list');
+Route::get('/inspection/{area}/add', [InspecController::class, 'select_type'])->name('inspection.select.type');
+Route::get('/inspection/{area}/add/{type}', [InspecController::class, 'create'])->name('inspection.create');

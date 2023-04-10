@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Area;
+use App\Models\Inspec;
 use Illuminate\Http\Request;
 
 class InspecController extends Controller
@@ -15,7 +16,11 @@ class InspecController extends Controller
 
     public function list(Area $area)
     {
-        return view('inspection.list', compact('area'));
+        $inspecs = Inspec::where('area_id', $area->slug)->get();
+        return view('inspection.list', [
+            'inspecs' => $inspecs,
+            'area' => $area,
+        ]);
     }
 
     public function show($area)
@@ -25,8 +30,8 @@ class InspecController extends Controller
         ]);
     }
 
-    public function create()
+    public function select_type(Area $area)
     {
-        return view('inspection.add');
+        return view('inspection.select_type', compact('area'));
     }
 }

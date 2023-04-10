@@ -23,4 +23,9 @@ class Area extends Model
     {
         return $this->hasMany(Recap::class);
     }
+
+    public function inspects()
+    {
+        return $this->hasMany(Inspect::class);
+    }
 }
