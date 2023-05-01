@@ -11,13 +11,19 @@ class Inspec extends Model
 
     protected $fillable = [
         'string_id',
-        'borrower_name',
         'ppe_name',
+        'inspector_name',
+        'inspection_date',
         'area_id',
-        'loan_date',
-        'submission_date',
+        'borrower_name',
+        'q1',
+        'q2',
+        'q3',
+        'q4',
+        'q5',
         'image',
         'notes',
+        'recommendation',
     ];
 
     public function area()

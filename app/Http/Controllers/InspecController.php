@@ -34,4 +34,32 @@ class InspecController extends Controller
     {
         return view('inspection.select_type', compact('area'));
     }
+
+    public function create(Area $area, $type)
+    {
+        $typename = str_replace(['-', '_'], ' ', $type);
+        $typename = ucwords($typename);
+
+        return view('inspection.add', [
+            'area' => $area,
+            'type' => $type,
+            'typename' => $typename,
+        ]);
+    }
+
+    public function store(Request $request)
+    {
+        $newInspec = $request->all();
+
+        if ($request->hasFile('image')) {
+            // dd('gambar terbaca');
+            $imageName = time().'.'.$request->image->extension();
+            $request->image->storeAs('public/images/inspection', $imageName);
+            $newInspec["image"] = $imageName;
+        }
+
+        Inspec::create($newInspec);
+        $route = '/inspection/' . $request->area_id;
+        return redirect($route)->with('success', 'Data berhasil ditambahkan!');
+    }
 }
