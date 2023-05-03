@@ -23,9 +23,12 @@ class InspecController extends Controller
         ]);
     }
 
-    public function show($area)
+    public function show($id)
     {
-        return view('inspec.show', [
+        $inspec = Inspec::find($id);
+        $area = Area::where('slug', $inspec->area_id)->first();
+        return view('inspection.show', [
+            'inspec' => $inspec,
             'area' => $area,
         ]);
     }

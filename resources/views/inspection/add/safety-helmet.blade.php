@@ -25,7 +25,7 @@
     <input type="text" name="borrower_name" class="form-control" id="borrower_name">
   </div>
   <div class="mb-3">
-    <label class="form-label">Apakah lanyard berfungsi dengan baik?</label>
+    <label class="form-label">Apakah brim dalam keadaan baik?</label>
     <div class="form-check d-flex align-items-center">
       <input class="form-check-input me-2" type="radio" name="q1" id="q1-yes" value="Ya">
       <label class="form-check-label me-2 mt-1" for="q1-yes">
@@ -40,7 +40,7 @@
     </div>
   </div>
   <div class="mb-3">
-    <label class="form-label">Apakah webbing berfungsi dengan baik?</label>
+    <label class="form-label">Apakah suspensi dalam keadaan baik?</label>
     <div class="form-check d-flex align-items-center">
       <input class="form-check-input me-2" type="radio" name="q2" id="q2-yes" value="Ya">
       <label class="form-check-label me-2 mt-1" for="q2-yes">
@@ -55,7 +55,7 @@
     </div>
   </div>
   <div class="mb-3">
-    <label class="form-label">Apakah buckle berfungsi dengan baik?</label>
+    <label class="form-label">Apakah tali helm dalam keadaan baik?</label>
     <div class="form-check d-flex align-items-center">
       <input class="form-check-input me-2" type="radio" name="q3" id="q3-yes" value="Ya">
       <label class="form-check-label me-2 mt-1" for="q3-yes">
@@ -65,36 +65,6 @@
     <div class="form-check d-flex align-items-center">
       <input class="form-check-input me-2" type="radio" name="q3" id="q3-no" value="Tidak">
       <label class="form-check-label me-2 mt-1" for="q3-no">
-        Tidak
-      </label>
-    </div>
-  </div>
-  <div class="mb-3">
-    <label class="form-label">Apakah absorber berfungsi dengan baik?</label>
-    <div class="form-check d-flex align-items-center">
-      <input class="form-check-input me-2" type="radio" name="q4" id="q4-yes" value="Ya">
-      <label class="form-check-label me-2 mt-1" for="q4-yes">
-        Ya
-      </label>
-    </div>
-    <div class="form-check d-flex align-items-center">
-      <input class="form-check-input me-2" type="radio" name="q4" id="q4-no" value="Tidak">
-      <label class="form-check-label me-2 mt-1" for="q4-no">
-        Tidak
-      </label>
-    </div>
-  </div>
-  <div class="mb-3">
-    <label class="form-label">Apakah double hook berfungsi dengan baik?</label>
-    <div class="form-check d-flex align-items-center">
-      <input class="form-check-input me-2" type="radio" name="q5" id="q5-yes" value="Ya">
-      <label class="form-check-label me-2 mt-1" for="q5-yes">
-        Ya
-      </label>
-    </div>
-    <div class="form-check d-flex align-items-center">
-      <input class="form-check-input me-2" type="radio" name="q5" id="q5-no" value="Tidak">
-      <label class="form-check-label me-2 mt-1" for="q5-no">
         Tidak
       </label>
     </div>

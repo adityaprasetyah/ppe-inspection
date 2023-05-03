@@ -20,14 +20,14 @@ return new class extends Migration
             $table->date('inspection_date');
             $table->string('area_id');
             $table->string('borrower_name');
-            $table->string('q1');
-            $table->string('q2');
-            $table->string('q3');
-            $table->string('q4');
-            $table->string('q5');
-            $table->string('image');
-            $table->string('notes');
-            $table->string('recommendation');
+            $table->string('q1')->nullable();
+            $table->string('q2')->nullable();
+            $table->string('q3')->nullable();
+            $table->string('q4')->nullable();
+            $table->string('q5')->nullable();
+            $table->string('image')->nullable();
+            $table->string('notes')->nullable();
+            $table->string('recommendation')->nullable();
         });
     }
 

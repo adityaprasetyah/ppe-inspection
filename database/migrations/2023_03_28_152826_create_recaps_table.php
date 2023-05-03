@@ -21,6 +21,7 @@ return new class extends Migration
             $table->date('submission_date');
             $table->string('image')->nullable();
             $table->text('notes')->nullable();
+            // $table->string('status')->default('success');
             $table->timestamps();
         });
     }

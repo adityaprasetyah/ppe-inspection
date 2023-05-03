@@ -18,6 +18,7 @@ class Recap extends Model
         'submission_date',
         'image',
         'notes',
+        'status'
     ];
 
     public function area()
