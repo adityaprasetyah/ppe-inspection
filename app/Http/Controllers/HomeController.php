@@ -10,4 +10,14 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function guide() 
+    {
+        return view('guide');
+    }
+
+    public function about() 
+    {
+        return view('about');
+    }
 }

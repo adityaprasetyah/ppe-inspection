@@ -6,6 +6,12 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
+        <li class="nav-item d-flex align-items-center">
+          <a class="nav-link text-light" aria-current="page" href={{ route('about') }}>Tentang</a>
+        </li>
+        <li class="nav-item d-flex align-items-center">
+          <a class="nav-link text-light" aria-current="page" href={{ route('guide') }}>Panduan</a>
+        </li>
         @auth
         <li class="nav-item">
           <div class="btn-group">
@@ -13,8 +19,7 @@
               {{ Auth::user()->name }}
             </button>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Profile</a></li>
-              <li><a class="dropdown-item" href="#">Manage Area</a></li>
+              <li><a class="dropdown-item" href={{ route('area') }}>Manage Area</a></li>
               <li><hr class="dropdown-divider"></li>
               <li>
                 <form action={{ route('logout') }} method="GET">
