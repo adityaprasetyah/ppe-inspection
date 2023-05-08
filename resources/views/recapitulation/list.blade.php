@@ -2,7 +2,11 @@
   <div class="container my-5">
     <div class="d-flex justify-content-between align-items-center mb-4">
       <h1 class="fs-5"><a href={{ route('recapitulation') }}>Rekapitulasi</a> \   Area {{ $area->name }}</h1>
+      @auth
+      @if (Auth::user()->email == 'admin@ksu.com')
       <a type="button" href={{ route('recapitulation.create', $area->slug) }} class="btn btn-primary">Tambah Rekapitulasi</a>
+      @endif
+      @endauth
     </div>
     @if (count($recaps) == 0)
     <div class="alert alert-warning my-5" role="alert">

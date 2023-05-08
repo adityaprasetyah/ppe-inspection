@@ -22,6 +22,16 @@ class DatabaseSeeder extends Seeder
             'updated_at' => now(),
         ]);
 
+        \App\Models\User::factory()->create([
+            'name' => 'Safety Officer',
+            'email' => 'safety@ksu.com',
+            'email_verified_at' => now(),
+            'password' => bcrypt('password'),
+            'remember_token' => 'remember_token',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
         $this->call([
             AreaSeeder::class,
         ]);

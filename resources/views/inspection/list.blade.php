@@ -2,7 +2,11 @@
   <div class="container my-5">
     <div class="d-flex justify-content-between align-items-center mb-4">
       <h1 class="fs-5"><a href={{ route('inspection') }}>Inspeksi</a> \   Area {{ $area->name }}</h1>
+      @auth
+      @if (Auth::user()->email == 'safety@ksu.com')
       <a type="button" href={{ route('inspection.select.type', $area->slug) }} class="btn btn-primary">Tambah Inspeksi</a>
+      @endif
+      @endauth
     </div>
     @if (count($inspecs) == 0)
     <div class="alert alert-warning my-5" role="alert">
