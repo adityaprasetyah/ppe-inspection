@@ -13,32 +13,34 @@
       Belum ada inspeksi untuk area {{ $area->name }}.
     </div>
     @else
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th scope="col" class="fw-bold text-center">id</th>
-          <th scope="col" class="fw-bold">Nama APD</th>
-          <th scope="col" class="fw-bold">Nama Peminjam</th>
-          <th scope="col" class="fw-bold">Nama Inspektor</th>
-          <th scope="col" class="fw-bold text-center">Aksi</th>
-        </tr>
-      </thead>
-      <tbody>
-        @foreach ($inspecs as $inspec)
-        <tr class="py-2">
-          <td class="text-center">{{ $inspec->string_id }}</td>
-          <td>{{ $inspec->ppe_name }}</td>
-          <td>{{ $inspec->borrower_name }}</td>
-          <td>{{ $inspec->inspector_name }}</td>
-          <td class="text-center">
-            <a href={{ route('inspection.detail', $inspec->id) }}>
-              <button class="btn btn-light border">Lihat</button>
-            </a>
-          </td>
-        </tr>
-        @endforeach
-      </tbody>
-    </table>
+    <div class="overflow-auto">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col" class="fw-bold text-center">id</th>
+            <th scope="col" class="fw-bold">Nama APD</th>
+            <th scope="col" class="fw-bold">Nama Peminjam</th>
+            <th scope="col" class="fw-bold">Nama Inspektor</th>
+            <th scope="col" class="fw-bold text-center">Aksi</th>
+          </tr>
+        </thead>
+        <tbody>
+          @foreach ($inspecs as $inspec)
+          <tr class="py-2">
+            <td class="text-center">{{ $inspec->string_id }}</td>
+            <td>{{ $inspec->ppe_name }}</td>
+            <td>{{ $inspec->borrower_name }}</td>
+            <td>{{ $inspec->inspector_name }}</td>
+            <td class="text-center">
+              <a href={{ route('inspection.detail', $inspec->id) }}>
+                <button class="btn btn-light border">Lihat</button>
+              </a>
+            </td>
+          </tr>
+          @endforeach
+        </tbody>
+      </table>
+    </div>
     @endif
   </div>
 </x-layout>

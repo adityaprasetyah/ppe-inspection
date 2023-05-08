@@ -13,28 +13,30 @@
       Belum ada area.
     </div>
     @else
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th scope="col" class="fw-bold">Nama Area</th>
-          <th scope="col" class="fw-bold text-center">Aksi</th>
-        </tr>
-      </thead>
-      <tbody>
-        @foreach ($areas as $area)
-        <tr class="py-2">
-          <td>{{ $area->name }}</td>
-          <td class="text-center">
-            <form method="POST" action="{{ route('area.delete', $area->slug) }}">
-              @csrf
-              @method('DELETE')
-              <button type="submit" class="btn btn-danger border">Hapus</button>
-            </form>
-          </td>
-        </tr>
-        @endforeach
-      </tbody>
-    </table>
+    <div class="overflow-auto">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col" class="fw-bold">Nama Area</th>
+            <th scope="col" class="fw-bold text-center">Aksi</th>
+          </tr>
+        </thead>
+        <tbody>
+          @foreach ($areas as $area)
+          <tr class="py-2">
+            <td>{{ $area->name }}</td>
+            <td class="text-center">
+              <form method="POST" action="{{ route('area.delete', $area->slug) }}">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-danger border">Hapus</button>
+              </form>
+            </td>
+          </tr>
+          @endforeach
+        </tbody>
+      </table>
+    </div>
     @endif
   </div>
 </x-layout>

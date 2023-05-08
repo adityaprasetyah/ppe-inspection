@@ -1,7 +1,7 @@
 <x-layout>
 <div class="container py-5">
     <div class="row justify-content-center">
-      <div class="col-sm-4 mx-4 card btn btn-light">
+      <div class="col-sm-4 mx-4 card btn btn-light border-0">
         <a href={{ route('recapitulation') }} class="text-decoration-none text-dark">
           <div class="card-body py-5">
             <img src={{ asset('img/rekapitulasi.png') }} class="card-img-top card-image" alt="rekapitulasi">
@@ -9,7 +9,7 @@
           </div>
         </a>
       </div>
-      <div class="col-sm-4 mx-4 card btn btn-light">
+      <div class="col-sm-4 mx-4 card btn btn-light border-0">
         <a href={{ route('inspection') }} class="text-decoration-none text-dark">
           <div class="card-body py-5">
             <img src={{ asset('img/inspeksi.png') }} class="card-img-top card-image" alt="inspeksi">
