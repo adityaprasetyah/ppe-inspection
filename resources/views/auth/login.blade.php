@@ -6,7 +6,7 @@
       </div>
     </div>
     <div class="row my-5">
-      <div class="col-6 mx-auto">
+      <div class="col-md-6 mx-auto">
         <form method="POST" action="{{ route('login') }}">
           @csrf
           <div class="mb-3">

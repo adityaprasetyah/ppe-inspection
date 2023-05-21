@@ -24,6 +24,10 @@ class AuthController extends Controller
             return redirect('/');
         }
 
+        if (Auth::user()->email == 'user@ksu.com') {
+            return redirect(route('dashboard'));
+        }
+
         return back()->withErrors([
             'login' => 'email atau password yang anda masukkan salah.',
         ]);

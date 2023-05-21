@@ -7,6 +7,9 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item d-flex align-items-center my-2 my-lg-0">
+          <a class="nav-link text-light" aria-current="page" href={{ route('dashboard') }}>Dashboard</a>
+        </li>
+        <li class="nav-item d-flex align-items-center my-2 my-lg-0">
           <a class="nav-link text-light" aria-current="page" href={{ route('about') }}>Tentang</a>
         </li>
         <li class="nav-item d-flex align-items-center my-2 my-lg-0">
