@@ -1,6 +1,7 @@
 <x-layout>
 <div class="container py-5">
     <div class="row justify-content-center">
+      @if (Auth::user()->email == 'admin@ksu.com')
       <div class="col-sm-4 card btn btn-light border-0">
         <a href={{ route('recapitulation') }} class="text-decoration-none text-dark">
           <div class="card-body py-5">
@@ -9,6 +10,7 @@
           </div>
         </a>
       </div>
+      @else
       <div class="col-sm-4 card btn btn-light border-0">
         <a href={{ route('inspection') }} class="text-decoration-none text-dark">
           <div class="card-body py-5">
@@ -17,6 +19,7 @@
           </div>
         </a>
       </div>
+      @endif
     </div>
   </div>
 </x-layout>

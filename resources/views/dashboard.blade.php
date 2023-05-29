@@ -6,7 +6,8 @@
       <a href="{{ route('ppe.edit') }}" class="btn btn-primary my-3">Manage Data</a>
     </div>
     @endif
-    <div class="row my-3">
+    <div class="row justify-content-between my-3">
+      @if (Auth::user()->email != 'safety@ksu.com')
       <div class="col-md-3">
         <table class="table w-100">
           <tr class="border">
@@ -50,6 +51,7 @@
           </tr>
         </table>
       </div>
+      @endif
       <div class="col-md-6">
         <canvas id="myChart"></canvas>
       </div>
@@ -105,30 +107,54 @@
     <script>
       const ctx = document.getElementById('myChart');
 
+      const email = @json(Auth::user()->email);
       const ppe = @json($ppe);
+      console.log(email)
 
-      new Chart(ctx, {
-        type: 'bar',
-        data: {
-          labels: ['Total', 'Body Harness', 'Safety Helmet', 'Kap Las', 'Face Shield', 'Sarung Tangan Las', 'Earplug', 'Safety Shoes', 'Rompi'],
-          datasets: [{
-            label: 'DATA APD GUDANG',
-            data: [ppe.warehouse_total, ppe.warehouse_body_harness, ppe.warehouse_safety_helmet, ppe.warehouse_kap_las, ppe.warehouse_face_shield, ppe.warehouse_sarung_tangan_las, ppe.warehouse_earplug, ppe.warehouse_safety_shoes, ppe.warehouse_vest],
-            borderWidth: 1
-          }, {
-            label: 'DATA APD LAPANGAN',
-            data: [ppe.onsite_total, ppe.onsite_body_harness, ppe.onsite_safety_helmet, ppe.onsite_kap_las, ppe.onsite_face_shield, ppe.onsite_sarung_tangan_las, ppe.onsite_earplug, ppe.onsite_safety_shoes, ppe.onsite_vest],
-            borderWidth: 1
-          }]
-        },
-        options: {
-          scales: {
-            y: {
-              beginAtZero: true
+      if (email == 'safety@ksu.com') {
+        new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: ['Total', 'Body Harness', 'Safety Helmet', 'Kap Las', 'Face Shield', 'Sarung Tangan Las', 'Earplug', 'Safety Shoes', 'Rompi'],
+            datasets: [{
+              label: 'DATA APD LAPANGAN',
+              data: [ppe.onsite_total, ppe.onsite_body_harness, ppe.onsite_safety_helmet, ppe.onsite_kap_las, ppe.onsite_face_shield, ppe.onsite_sarung_tangan_las, ppe.onsite_earplug, ppe.onsite_safety_shoes, ppe.onsite_vest],
+              borderWidth: 1
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
             }
           }
-        }
-      });
+        });
+      } else {
+        new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: ['Total', 'Body Harness', 'Safety Helmet', 'Kap Las', 'Face Shield', 'Sarung Tangan Las', 'Earplug', 'Safety Shoes', 'Rompi'],
+            datasets: [{
+              label: 'DATA APD GUDANG',
+              data: [ppe.warehouse_total, ppe.warehouse_body_harness, ppe.warehouse_safety_helmet, ppe.warehouse_kap_las, ppe.warehouse_face_shield, ppe.warehouse_sarung_tangan_las, ppe.warehouse_earplug, ppe.warehouse_safety_shoes, ppe.warehouse_vest],
+              borderWidth: 1
+            }, {
+              label: 'DATA APD LAPANGAN',
+              data: [ppe.onsite_total, ppe.onsite_body_harness, ppe.onsite_safety_helmet, ppe.onsite_kap_las, ppe.onsite_face_shield, ppe.onsite_sarung_tangan_las, ppe.onsite_earplug, ppe.onsite_safety_shoes, ppe.onsite_vest],
+              borderWidth: 1
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+      }
+
     </script>
   </x-slot>
 </x-layout>
