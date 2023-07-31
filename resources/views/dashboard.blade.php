@@ -109,7 +109,6 @@
 
       const email = @json(Auth::user()->email);
       const ppe = @json($ppe);
-      console.log(email)
 
       if (email == 'safety@ksu.com') {
         new Chart(ctx, {

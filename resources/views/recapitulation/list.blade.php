@@ -42,6 +42,9 @@
               <a href={{ route('recapitulation.detail', $recap->id) }}>
                 <button class="btn btn-light border">Lihat</button>
               </a>
+              <button type="button" class="btn btn-danger border" data-bs-toggle="modal" data-bs-target="#deleteModal" data-recap-id={{ $recap->id }}>
+                Hapus
+              </button>
             </td>
           </tr>
           @endforeach
@@ -50,4 +53,43 @@
     </div>
     @endif
   </div>
+
+  <x-slot name="script">
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var deleteModal = document.getElementById('deleteModal');
+        deleteModal.addEventListener('show.bs.modal', function (event) {
+          var button = event.relatedTarget; // Button that triggered the modal
+          var recapId = button.getAttribute('data-recap-id'); // Extract the data-recap-id value
+          console.log(recapId);
+          document.getElementById('recapIdInput').value = recapId; // Set the value of the hidden input field
+        });
+      });
+    </script>
+  </x-slot>
 </x-layout>
+
+{{-- modal --}}
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Hapus Data Rekapitulasi</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p class="lh-base">Data yang sudah dihapus akan disimpan pada halaman history rekapitulasi.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+        <form action={{ route('recapitulation.history.add') }} method="POST">
+          @csrf
+          @method('PUT')
+          <input type="hidden" id="recapIdInput" name="recap_id" value="">
+          <input type="hidden" name="area" value={{ $area->slug }}>
+          <button type="submit" class="btn btn-danger">Ya</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

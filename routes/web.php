@@ -35,6 +35,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/inspection/{id}/detail', [InspecController::class, 'show'])->name('inspection.detail');
 
     Route::get('/recapitulation', [RecapController::class, 'index'])->name('recapitulation');
+    Route::put('/recapitulation/history/add', [RecapController::class, 'addToHistory'])->name('recapitulation.history.add');
+    Route::get('/recapitulation/history', [RecapController::class, 'history'])->name('recapitulation.history');
     Route::get('/recapitulation/{area}', [RecapController::class, 'list'])->name('recapitulation.list');
     Route::post('/recapitulation/store', [RecapController::class, 'store'])->name('recapitulation.store');
     Route::get('/recapitulation/{area}/add', [RecapController::class, 'create'])->name('recapitulation.create');
