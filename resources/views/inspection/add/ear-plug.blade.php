@@ -55,6 +55,84 @@
     </div>
   </div>
   <div class="mb-3">
+    <label class="form-label">Apakah ukuran ear plug cukup untuk telinga pekerja?</label>
+    <div class="form-check d-flex align-items-center">
+      <input class="form-check-input me-2" type="radio" name="q3" id="q3-yes" value="Ya">
+      <label class="form-check-label me-2 mt-1" for="q3-yes">
+        Ya
+      </label>
+    </div>
+    <div class="form-check d-flex align-items-center">
+      <input class="form-check-input me-2" type="radio" name="q3" id="q3-no" value="Tidak">
+      <label class="form-check-label me-2 mt-1" for="q3-no">
+        Tidak
+      </label>
+    </div>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Ear plug terbuat dari katun karet silicon?</label>
+    <div class="form-check d-flex align-items-center">
+      <input class="form-check-input me-2" type="radio" name="q4" id="q4-yes" value="Ya">
+      <label class="form-check-label me-2 mt-1" for="q4-yes">
+        Ya
+      </label>
+    </div>
+    <div class="form-check d-flex align-items-center">
+      <input class="form-check-input me-2" type="radio" name="q4" id="q4-no" value="Tidak">
+      <label class="form-check-label me-2 mt-1" for="q4-no">
+        Tidak
+      </label>
+    </div>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Terdapat segel yang sempurna pada sekitar telinga?</label>
+    <div class="form-check d-flex align-items-center">
+      <input class="form-check-input me-2" type="radio" name="q5" id="q5-yes" value="Ya">
+      <label class="form-check-label me-2 mt-1" for="q5-yes">
+        Ya
+      </label>
+    </div>
+    <div class="form-check d-flex align-items-center">
+      <input class="form-check-input me-2" type="radio" name="q5" id="q5-no" value="Tidak">
+      <label class="form-check-label me-2 mt-1" for="q5-no">
+        Tidak
+      </label>
+    </div>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Tidak dipakai pada area kerja yang memiliki nilai kebisingan diatas 85dB??</label>
+    <div class="form-check d-flex align-items-center">
+      <input class="form-check-input me-2" type="radio" name="q6" id="q6-yes" value="Ya">
+      <label class="form-check-label me-2 mt-1" for="q6-yes">
+        Ya
+      </label>
+    </div>
+    <div class="form-check d-flex align-items-center">
+      <input class="form-check-input me-2" type="radio" name="q6" id="q6-no" value="Tidak">
+      <label class="form-check-label me-2 mt-1" for="q6-no">
+        Tidak
+      </label>
+    </div>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Apakah pods pada ear plug rutin diganti setiap 3 minggu sekali?</label>
+    <div class="form-check d-flex align-items-center">
+      <input class="form-check-input me-2" type="radio" name="q7" id="q7-yes" value="Ya">
+      <label class="form-check-label me-2 mt-1" for="q7-yes">
+        Ya
+      </label>
+    </div>
+    <div class="form-check d-flex align-items-center">
+      <input class="form-check-input me-2" type="radio" name="q7" id="q7-no" value="Tidak">
+      <label class="form-check-label me-2 mt-1" for="q7-no">
+        Tidak
+      </label>
+    </div>
+  </div>
+  <div class="mb-5">
+    <p class="fst-italic">Guidance: OSHA 3151-02R 2023</p>
+  </div>
+  <div class="mb-3">
     <label for="image" class="form-label">Dokumentasi</label>
     <input type="file" name="image" class="form-control" id="image">
   </div>

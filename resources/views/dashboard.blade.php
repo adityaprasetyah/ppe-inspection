@@ -53,7 +53,16 @@
       </div>
       @endif
       <div class="col-md-6">
-        <canvas id="myChart"></canvas>
+        <h1 class="fs-5 fw-bold text-center mb-3">Rincian Jumlah Data APD</h1>
+        <div class="mb-5">
+          <canvas id="myChart"></canvas>
+        </div>
+        @if (Auth::user()->email != 'safety@ksu.com')
+        <h1 class="fs-5 fw-bold text-center mb-3">Jumlah Total Data APD</h1>
+        <div class="w-50 mx-auto">
+          <canvas id="myChart2"></canvas>
+        </div>
+        @endif
       </div>
       <div class="col-md-3">
         <table class="table w-100">
@@ -106,6 +115,7 @@
 
     <script>
       const ctx = document.getElementById('myChart');
+      const cty = document.getElementById('myChart2');
 
       const email = @json(Auth::user()->email);
       const ppe = @json($ppe);
@@ -133,14 +143,14 @@
         new Chart(ctx, {
           type: 'bar',
           data: {
-            labels: ['Total', 'Body Harness', 'Safety Helmet', 'Kap Las', 'Face Shield', 'Sarung Tangan Las', 'Earplug', 'Safety Shoes', 'Rompi'],
+            labels: ['Body Harness', 'Safety Helmet', 'Kap Las', 'Face Shield', 'Sarung Tangan Las', 'Earplug', 'Safety Shoes', 'Rompi'],
             datasets: [{
               label: 'DATA APD GUDANG',
-              data: [ppe.warehouse_total, ppe.warehouse_body_harness, ppe.warehouse_safety_helmet, ppe.warehouse_kap_las, ppe.warehouse_face_shield, ppe.warehouse_sarung_tangan_las, ppe.warehouse_earplug, ppe.warehouse_safety_shoes, ppe.warehouse_vest],
+              data: [ppe.warehouse_body_harness, ppe.warehouse_safety_helmet, ppe.warehouse_kap_las, ppe.warehouse_face_shield, ppe.warehouse_sarung_tangan_las, ppe.warehouse_earplug, ppe.warehouse_safety_shoes, ppe.warehouse_vest],
               borderWidth: 1
             }, {
               label: 'DATA APD LAPANGAN',
-              data: [ppe.onsite_total, ppe.onsite_body_harness, ppe.onsite_safety_helmet, ppe.onsite_kap_las, ppe.onsite_face_shield, ppe.onsite_sarung_tangan_las, ppe.onsite_earplug, ppe.onsite_safety_shoes, ppe.onsite_vest],
+              data: [ppe.onsite_body_harness, ppe.onsite_safety_helmet, ppe.onsite_kap_las, ppe.onsite_face_shield, ppe.onsite_sarung_tangan_las, ppe.onsite_earplug, ppe.onsite_safety_shoes, ppe.onsite_vest],
               borderWidth: 1
             }]
           },
@@ -148,6 +158,24 @@
             scales: {
               y: {
                 beginAtZero: true
+              }
+            }
+          }
+        });
+        new Chart(cty, {
+          type: 'doughnut',
+          data: {
+            labels: ['DATA APD GUDANG', 'DATA APD LAPANGAN'],
+            datasets: [{
+              label: 'TOTAL APD', 
+              data: [ppe.warehouse_total, ppe.onsite_total],
+              // borderWidth: 1
+            }]
+          },
+          options: {
+            plugins: {
+              legend: {
+                position: 'bottom',
               }
             }
           }
