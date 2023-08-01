@@ -70,6 +70,99 @@
     </div>
   </div>
   <div class="mb-3">
+    <label class="form-label">Apakah safety helmet sudah tahap penetrasi terhadap benda?</label>
+    <div class="form-check d-flex align-items-center">
+      <input class="form-check-input me-2" type="radio" name="q4" id="q4-yes" value="Ya">
+      <label class="form-check-label me-2 mt-1" for="q4-yes">
+        Ya
+      </label>
+    </div>
+    <div class="form-check d-flex align-items-center">
+      <input class="form-check-input me-2" type="radio" name="q4" id="q4-no" value="Tidak">
+      <label class="form-check-label me-2 mt-1" for="q4-no">
+        Tidak
+      </label>
+    </div>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Apakah safety helmet tahan air?</label>
+    <div class="form-check d-flex align-items-center">
+      <input class="form-check-input me-2" type="radio" name="q5" id="q5-yes" value="Ya">
+      <label class="form-check-label me-2 mt-1" for="q5-yes">
+        Ya
+      </label>
+    </div>
+    <div class="form-check d-flex align-items-center">
+      <input class="form-check-input me-2" type="radio" name="q5" id="q5-no" value="Tidak">
+      <label class="form-check-label me-2 mt-1" for="q5-no">
+        Tidak
+      </label>
+    </div>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Apakah penggantian suspense dan ikat kepala sudah tepat?</label>
+    <div class="form-check d-flex align-items-center">
+      <input class="form-check-input me-2" type="radio" name="q6" id="q6-yes" value="Ya">
+      <label class="form-check-label me-2 mt-1" for="q6-yes">
+        Ya
+      </label>
+    </div>
+    <div class="form-check d-flex align-items-center">
+      <input class="form-check-input me-2" type="radio" name="q6" id="q6-no" value="Tidak">
+      <label class="form-check-label me-2 mt-1" for="q6-no">
+        Tidak
+      </label>
+    </div>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Apakah safety helmet memiliki shelt yang keras?</label>
+    <div class="form-check d-flex align-items-center">
+      <input class="form-check-input me-2" type="radio" name="q7" id="q7-yes" value="Ya">
+      <label class="form-check-label me-2 mt-1" for="q7-yes">
+        Ya
+      </label>
+    </div>
+    <div class="form-check d-flex align-items-center">
+      <input class="form-check-input me-2" type="radio" name="q7" id="q7-no" value="Tidak">
+      <label class="form-check-label me-2 mt-1" for="q7-no">
+        Tidak
+      </label>
+    </div>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Apakah Panjang tali helm dengan shelt 1 inci (2,54-3,18cm)?</label>
+    <div class="form-check d-flex align-items-center">
+      <input class="form-check-input me-2" type="radio" name="q8" id="q8-yes" value="Ya">
+      <label class="form-check-label me-2 mt-1" for="q8-yes">
+        Ya
+      </label>
+    </div>
+    <div class="form-check d-flex align-items-center">
+      <input class="form-check-input me-2" type="radio" name="q8" id="q8-no" value="Tidak">
+      <label class="form-check-label me-2 mt-1" for="q8-no">
+        Tidak
+      </label>
+    </div>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Jika kondisi helm retak, perforasi, atau pecah jangan gunakan</label>
+    <div class="form-check d-flex align-items-center">
+      <input class="form-check-input me-2" type="radio" name="q9" id="q9-yes" value="Ya">
+      <label class="form-check-label me-2 mt-1" for="q9-yes">
+        Ya
+      </label>
+    </div>
+    <div class="form-check d-flex align-items-center">
+      <input class="form-check-input me-2" type="radio" name="q9" id="q9-no" value="Tidak">
+      <label class="form-check-label me-2 mt-1" for="q9-no">
+        Tidak
+      </label>
+    </div>
+  </div>
+  <div class="mb-5">
+    <p class="fst-italic">Guidance: ANSI Z89.1-2009</p>
+  </div>
+  <div class="mb-3">
     <label for="image" class="form-label">Dokumentasi</label>
     <input type="file" name="image" class="form-control" id="image">
   </div>

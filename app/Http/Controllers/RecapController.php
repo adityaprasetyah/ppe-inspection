@@ -17,7 +17,7 @@ class RecapController extends Controller
 
     public function list(Area $area)
     {
-        $recaps = Recap::where('area_id', $area->slug)->get();
+        $recaps = Recap::where('area_id', $area->slug)->where('is_archived', false)->get();
 
         foreach ($recaps as $recap) {
             $next_week = Carbon::now()->addWeek();
@@ -66,5 +66,20 @@ class RecapController extends Controller
         Recap::create($newRecap);
         $route = '/recapitulation/' . $request->area_id;
         return redirect($route)->with('success', 'Data berhasil ditambahkan!');
+    }
+
+    public function history() {
+        $recaps = Recap::where('is_archived', true)->get();
+        return view('recapitulation.history', compact('recaps'));
+    }
+
+    public function addToHistory(Request $request) {
+        $id = $request->recap_id;
+        $slug = $request->area;
+        $recap = Recap::find($id);
+        // dd($recap);
+        $recap->is_archived = true;
+        $recap->save();
+        return redirect('/recapitulation/' . $slug)->with('success', 'Data berhasil dihapus!');
     }
 }

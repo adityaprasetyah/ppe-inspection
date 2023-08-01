@@ -25,6 +25,10 @@ return new class extends Migration
             $table->string('q3')->nullable();
             $table->string('q4')->nullable();
             $table->string('q5')->nullable();
+            $table->string('q6')->nullable();
+            $table->string('q7')->nullable();
+            $table->string('q8')->nullable();
+            $table->string('q9')->nullable();
             $table->string('image')->nullable();
             $table->string('notes')->nullable();
             $table->string('recommendation')->nullable();

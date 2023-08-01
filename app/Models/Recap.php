@@ -23,6 +23,6 @@ class Recap extends Model
 
     public function area()
     {
-        return $this->belongsTo(Area::class);
+        return $this->belongsTo(Area::class, 'area_id', 'slug');
     }
 }

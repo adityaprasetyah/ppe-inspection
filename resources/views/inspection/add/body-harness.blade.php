@@ -100,6 +100,39 @@
     </div>
   </div>
   <div class="mb-3">
+    <label class="form-label">Apakah masa pakai body harness tidak melebihi 5 tahun?</label>
+    <div class="form-check d-flex align-items-center">
+      <input class="form-check-input me-2" type="radio" name="q6" id="q6-yes" value="Ya">
+      <label class="form-check-label me-2 mt-1" for="q6-yes">
+        Ya
+      </label>
+    </div>
+    <div class="form-check d-flex align-items-center">
+      <input class="form-check-input me-2" type="radio" name="q6" id="q6-no" value="Tidak">
+      <label class="form-check-label me-2 mt-1" for="q6-no">
+        Tidak
+      </label>
+    </div>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Apakah D-ring tidak mengalami kerusakan?</label>
+    <div class="form-check d-flex align-items-center">
+      <input class="form-check-input me-2" type="radio" name="q7" id="q7-yes" value="Ya">
+      <label class="form-check-label me-2 mt-1" for="q7-yes">
+        Ya
+      </label>
+    </div>
+    <div class="form-check d-flex align-items-center">
+      <input class="form-check-input me-2" type="radio" name="q7" id="q7-no" value="Tidak">
+      <label class="form-check-label me-2 mt-1" for="q7-no">
+        Tidak
+      </label>
+    </div>
+  </div>
+  <div class="mb-5">
+    <p class="fst-italic">Guidance: OSHA 3151-02R 2023</p>
+  </div>
+  <div class="mb-3">
     <label for="image" class="form-label">Dokumentasi</label>
     <input type="file" name="image" class="form-control" id="image">
   </div>
